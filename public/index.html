@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNDB Gaming Online - Find Points</title>
+  <style>
+    #screen {
+      border: 1px solid #CCC;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      image-rendering: -moz-crisp-edges;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="screen" width="10" height="10"></canvas>
+  <script type="module">
+    import craeteGame from './game.js'
+    import createKeyboardListener from './keyboardListener.js';
+
+    const screen = document.getElementById('screen');
+  
+    const game = createGame();
+
+    const keyboardListener = createKeyboardListener(document);
+    // registrando um observer
+    keyboardListener.subscribe(game.movePlayer)
+
+    renderScreen(screen, game, requestAnimationFrame)
+
+
+  </script>
+</body>
+
+</html>
