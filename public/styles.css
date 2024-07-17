@@ -10,14 +10,14 @@ body {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   image-rendering: -moz-crisp-edges;
-  width: 650px;
-  height: 650px;
+  width: 90vw; /* Mudança para unidades flexíveis */
+  max-width: 650px;
+  height: 90vw; /* Mudança para unidades flexíveis */
+  max-height: 650px;
   -webkit-box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.19);
   box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.19);
   margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
   display: inline-block;
   vertical-align: top;
 }
@@ -26,7 +26,9 @@ body {
   font-size: 13px;
   vertical-align: top;
   display: inline-block;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px; /* Adicionado para espaçamento responsivo */
+  margin-right: 20px; /* Adicionado para espaçamento responsivo */
 }
 
 #score-table tr.header td {
@@ -51,7 +53,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: inline-block
+  display: inline-block;
 }
 
 #score-table .score-value {
@@ -63,4 +65,31 @@ body {
 #score-table .current-player .socket-id,
 #score-table .current-player .score-value {
   color: #bdaa27;
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+  #screen {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  #score-table {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #screen {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  #score-table {
+    font-size: 11px;
+  }
+
+  #score-table .socket-id {
+    width: 120px;
+  }
 }
